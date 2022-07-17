@@ -1,0 +1,342 @@
+*, *::before, *::after {
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+}
+
+:root {
+  --white: #eee;
+  --black: #111;
+  --turquoise: #42ab9c;
+  --background: #162230;
+  --lightGray: #cfcfcf;
+  --Montserrat: 'Montserrat', sans-serif;
+
+}
+
+::selection {
+  color: var(--white);
+  background-color: var(--turquoise);
+}
+
+body {
+  min-width: 300px;
+  min-height: 100vh;
+  background-image: url("images/unique-series-turquoise-desktop-wallpaper-blank.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  overflow-x: hidden;
+  font-family: var(--Montserrat) !important;
+  color: var(--white);
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 1em;
+}
+
+.overlay {
+  background-color: rgba(0,0,0,0.25);
+  background-blend-mode: multiply;
+}
+
+.nav {
+  display: flex;
+  justify-content: center;
+  gap: 2em;
+  margin: 2em;
+}
+
+.nav a {
+  color: var(--white);
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 700;
+  transition: transform 0.3s;
+}
+
+.nav a:hover {
+  transform: scale(115%);
+}
+
+#thanks {
+  text-align: center;
+  font-size: 5rem;
+  margin-top: 1.5em;
+}
+
+/* Home styles */
+
+.home {
+  display: grid;
+  place-items: center;
+  overflow-y: hidden;
+}
+
+#home-logo {
+  margin: 0 auto;
+}
+
+#jukemaster {
+  position: absolute;
+  top: -100%;
+  right: -100%;
+  animation: jukemaster 5s linear;
+  animation-delay: 10s;
+}
+
+@keyframes jukemaster {
+  0% {
+    top: -100%;
+    right: -100%;
+  }
+  100% {
+    top: 100%;
+    right: 100%;
+  }
+}
+
+/* #youtube-embed {
+  aspect-ratio: 16 / 9;
+  border-radius: 15px;
+  display: block;
+  margin: 0 auto;
+  box-shadow: 10px 10px 20px rgba(0,0,0,0.5);
+} */
+
+/* About styles */
+
+.comic {
+  display:flex;
+  flex-wrap:wrap;
+  font-family:'Comic Sans', cursive;
+  padding:1vmin;
+}
+
+.panel {
+  background-color:#fff;
+  border:solid 2px #000;
+  box-shadow:0 6px 6px -6px #000;
+  display:inline-block;
+  flex:1 1;
+  height:200px;
+  margin:1vmin;
+  overflow:hidden;
+  position:relative;
+  transition: all 0.3s ease-in-out;
+}
+
+.panel:hover {
+  transform: scale(103%);
+  box-shadow: 10px 10px 20px rgba(0,0,0,0.5);
+}
+
+.text {
+  background-color:#fff;
+  border:solid 2px #000;
+  margin:0;
+  padding:3px 10px;
+}
+
+.top-left {
+  left:-6px;
+  position:absolute;
+  top:-2px;
+  transform:skew(-15deg);
+  z-index: 1000;
+}
+
+.bottom-right {
+  bottom:-2px;
+  position:absolute;
+  right:-6px;
+  transform:skew(-15deg);
+  z-index: 1000;
+}
+
+.speech {
+  background-color:#fff;
+  border:solid 2px #000;
+  border-radius:12px;
+  display:inline-block;
+  margin:.5em;
+  padding:.5em 1em;
+  position:relative;
+}
+
+.speech:before {
+  border:solid 12px transparent;
+  border-left:solid 12px #000;
+  border-top:solid 12px #000;
+  bottom:-24px;
+  content:"";
+  height:0;
+  left:24px;
+  position:absolute;
+  transform:skew(-15deg);
+  width:0;
+}
+
+.speech:after {
+  border:solid 10px transparent;
+  border-left:solid 10px #fff;
+  border-top:solid 10px #fff;
+  bottom:-19px;
+  content:"";
+  height:0;
+  left:27px;
+  position:absolute;
+  transform:skew(-15deg);
+  width:0;
+}
+
+.panel p {
+  color: var(--black);
+}
+
+.panel img {
+  transition: all 0.3s ease-in-out;
+}
+
+.panel:nth-child(1) {
+  flex-basis: 400px;
+  background-image:radial-gradient(circle, var(--white), var(--turquoise));
+}
+.panel:nth-child(1) img {
+  transform: translate(25%, 5%) scale(115%);
+}
+.panel:nth-child(1):hover img {
+  transform: translate(25%, 5%) scale(125%);
+  filter: drop-shadow(10px 10px 20px rgba(0,0,0,0.49));
+}
+
+.panel:nth-child(2) {
+  flex-basis: 200px;
+  background-image:radial-gradient(circle, lightblue, deepskyblue);
+}
+
+.panel:nth-child(3) {
+  flex-basis: 200px;
+  background-image:radial-gradient(circle, palegreen, yellowgreen);
+}
+.panel:nth-child(3) img {
+  transform: translateX(25%);
+}
+.panel:nth-child(3):hover img {
+  transform: translateX(30%) scale(115%);
+  filter: drop-shadow(10px 10px 20px rgba(0,0,0,0.49));
+}
+
+.panel:nth-child(4) {
+  flex-basis: 200px;
+  background-image:radial-gradient(circle, lightcoral, tomato);
+}
+.panel:nth-child(4) img {
+  transform: translateX(5%);
+}
+.panel:nth-child(4):hover img {
+  transform: translateX(10%) scale(115%);
+  filter: drop-shadow(10px 10px 20px rgba(0,0,0,0.49));
+}
+
+.panel:nth-child(5) {
+  flex-basis: 200px;
+  background-image:radial-gradient(circle, var(--white), var(--turquoise));
+}
+
+.panel:nth-child(6) {
+  flex-basis: 200px;
+  background-image:radial-gradient(circle, lightblue, deepskyblue);
+}
+.panel:nth-child(6) img {
+  transform: translateY(-20%) scale(50%);
+}
+.panel:nth-child(6):hover img {
+  transform: translateY(-20%) scale(60%);
+  filter: drop-shadow(10px 10px 20px rgba(0,0,0,0.49));
+}
+
+.panel:nth-child(7) {
+  flex-basis: 400px;
+  background-image:radial-gradient(circle, palegreen, yellowgreen);
+}
+
+.panel:nth-child(8) {
+  flex-basis: 200px;
+  background-image:radial-gradient(circle, lightcoral, tomato);
+}
+
+.panel:nth-child(9) {
+  flex-basis: 200px;
+  background-image:radial-gradient(circle, var(--white), var(--turquoise));
+}
+
+/* Setup styles */
+.setup .flex {
+  display: flex;
+  justify-content: center;
+  gap: 2em;
+  flex-wrap: wrap;
+}
+.setup h1 {
+  text-align: center;
+  margin-bottom: 1em;
+}
+
+.setup h2 {
+  text-align: center;
+}
+
+.setup img {
+  max-width: 600px;
+  margin: 2em auto;
+}
+
+table {
+  border-spacing: 0;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto 5em auto;
+}
+
+th {
+  text-align: left;
+  padding: 1em;
+}
+
+td {
+  border-bottom: 1px solid var(--lightGray);
+  padding: 1em;
+}
+
+/* Contact styles */
+.icons {
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+}
+
+.icons img {
+  filter: grayscale(1) brightness(100%);
+  transition: filter 0.3s;
+}
+
+.icons img:hover {
+  filter: none;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+  .setup img {
+    max-width: 100%;
+  }
+}
