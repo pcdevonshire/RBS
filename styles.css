@@ -340,3 +340,26 @@ td {
     max-width: 100%;
   }
 }
+
+
+
+
+/* ----- Coming Soon ----- */
+#coming-soon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10000;
+  background-image: url('images/curtains.png');
+  background-size: cover;
+  display: grid;
+  place-items: center;
+  font-size: 2rem;
+}
+
+#coming-soon h1 {
+  color: var(--white);
+  text-shadow: 2px 2px 5px var(--black);
+}
