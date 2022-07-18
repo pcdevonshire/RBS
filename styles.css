@@ -318,6 +318,71 @@ td {
   padding: 1em;
 }
 
+/* Community styles */
+.community h1 {
+  text-align: center;
+  margin-bottom: 1em;
+}
+
+form {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+::placeholder {
+  font-family: var(--Montserrat);
+}
+
+label {
+  display: block;
+  font-size: 1.25em;
+  margin-top: 1em;
+}
+
+input,
+textarea {
+  display: block;
+  width: 100%;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  padding: 1em;
+  margin: 0.5em 0;
+}
+
+button {  
+  display: block;
+  font-size: 1em;
+  background: linear-gradient(-45deg, #00ceff, #00ff6f);
+  background-size: 500%;
+  animation: background-color 10s linear infinite;
+  border: none;
+  outline: none;
+  border-radius: 50px;
+  font-weight: 900;
+  font-family: var(--Montserrat);
+  color: var(--black);
+  box-shadow: rgb(0 0 0 / 35%) 0px 5px 15px;
+  margin: 2em auto 0 auto;
+  padding: 1em 3em;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+button:hover {
+  transform: scale(105%);
+}
+
+button:active {
+  transform: scale(95%);
+}
+
+@keyframes background-color {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
 /* Contact styles */
 .icons {
   display: flex;
@@ -327,6 +392,8 @@ td {
 
 .icons img {
   filter: grayscale(1) brightness(100%);
+  width: 100%;
+  max-width: 64px;
   transition: filter 0.3s;
 }
 
