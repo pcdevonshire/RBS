@@ -408,7 +408,9 @@ button:active {
   }
 }
 
-
+.error h1 {
+  text-align: center;
+}
 
 
 /* ----- Coming Soon ----- */
@@ -421,6 +423,7 @@ button:active {
   z-index: 10000;
   background-image: url('images/curtains.png');
   background-size: cover;
+  background-position: center;
   display: grid;
   place-items: center;
   font-size: 2rem;
@@ -429,4 +432,5 @@ button:active {
 #coming-soon h1 {
   color: var(--white);
   text-shadow: 2px 2px 5px var(--black);
+  text-align: center;
 }
