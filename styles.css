@@ -1,3 +1,23 @@
+@font-face {
+  font-family: 'ArialNarrow';
+  src: url('/fonts/ArialNarrow.ttf');
+}
+
+@font-face {
+  font-family: 'FrizQuadrata';
+  src: url('/fonts/FrizQuadrataRegular.ttf');
+}
+
+@font-face {
+  font-family: 'LifeCraft';
+  src: url('/fonts/LifeCraftFont.ttf');
+}
+
+@font-face {
+  font-family: 'Morpheus';
+  src: url('/fonts/Morpheus.ttf');
+}
+
 *, *::before, *::after {
   margin:0;
   padding:0;
@@ -5,13 +25,18 @@
 }
 
 :root {
+  /* Colors */
   --white: #eee;
   --black: #111;
   --turquoise: #42ab9c;
   --background: #162230;
   --lightGray: #cfcfcf;
+  /* Fonts */
   --Montserrat: 'Montserrat', sans-serif;
-
+  --ArialNarrow: 'ArialNarrow', sans-serif;
+  --FrizQuadrata: 'FrizQuadrata', sans-serif;
+  --LifeCraft: 'LifeCraft', sans-serif;
+  --Morpheus: 'Morpheus', sans-serif;
 }
 
 ::selection {
@@ -433,4 +458,5 @@ button:active {
   color: var(--white);
   text-shadow: 2px 2px 5px var(--black);
   text-align: center;
+  font-family: var(--FrizQuadrata);
 }
