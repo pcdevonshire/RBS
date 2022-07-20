@@ -151,26 +151,24 @@ img {
   transform: scale(115%);
 }
 
-#twitch-embed {
-  text-align: center;
-  padding: 1em;
-}
-
 @media screen and (max-width: 768px) {
   body > .container {
     min-height: 25vh;
     display: grid;
     place-items: center;
   }
-  #twitch-embed {
-    display: none;
+  iframe {
+    display: none !important;
   }
 }
 
-#twitch-embed iframe {
+iframe {
   width: min(100%, 940px);
   aspect-ratio: 16 / 9;
   height: auto;
+  padding: 1em;
+  display: block;
+  margin: 0 auto;
 }
 
 /* About styles */
