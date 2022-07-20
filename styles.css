@@ -106,7 +106,7 @@ img {
   font-family: var(--LifeCraft);
   font-size: clamp(2rem, 10vw, 5rem);
   text-transform: uppercase;
-  text-shadow: 0 0 5px rgb(0 0 0 / 95%), 0 0 100px rgb(0 0 0 / 75%)
+  text-shadow: 0 0 100px rgb(0 0 0 / 75%)
 }
 
 .hero h2 {
@@ -114,7 +114,6 @@ img {
   font-size: clamp(1.5rem, 8vw, 2.5rem);
   text-align: center;
   text-transform: lowercase;
-  text-shadow: 0 0 5px rgb(0 0 0 / 95%);
 }
 
 .container {
@@ -140,6 +139,7 @@ img {
 }
 
 .nav a {
+  font-size: clamp(1rem, 2vw, 1.5rem)
   color: var(--white);
   text-decoration: none;
   text-transform: uppercase;
@@ -159,6 +159,8 @@ img {
 @media screen and (max-width: 768px) {
   body > .container {
     min-height: 25vh;
+    display: grid;
+    place-items: center;
   }
   #twitch-embed {
     display: none;
