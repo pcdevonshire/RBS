@@ -157,18 +157,6 @@ img {
     display: grid;
     place-items: center;
   }
-  iframe {
-    display: none !important;
-  }
-}
-
-iframe {
-  width: min(100%, 940px);
-  aspect-ratio: 16 / 9;
-  height: auto;
-  padding: 1em;
-  display: block;
-  margin: 0 auto;
 }
 
 /* About styles */
@@ -435,30 +423,14 @@ footer p a {
 
 
 /* ----- Coming Soon ----- */
-#coming-soon {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 10000;
-  background-image: url('images/curtains.png');
-  background-size: cover;
-  background-position: center;
-  display: grid;
-  place-items: center;
-  font-size: 2rem;
-}
-
-#coming-soon h1 {
-  color: var(--white);
-  text-shadow: 2px 2px 5px var(--black);
-  text-align: center;
-  font-family: var(--FrizQuadrata);
-}
 
 .home {
-  display: grid;
-  place-items: center;
   overflow: hidden;
+}
+
+iframe {
+  width: 100vw;
+  height: 100vh;
+  border: none;
+  outline: none;
 }
