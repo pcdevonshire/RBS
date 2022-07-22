@@ -36,6 +36,11 @@
   --FrizQuadrata: 'FrizQuadrata', sans-serif;
   --LifeCraft: 'LifeCraft', sans-serif;
   --Morpheus: 'Morpheus', sans-serif;
+  /* Font Sizes */
+  --base: 1rem;
+  --medium: 1.25rem;
+  --large: 2rem;
+  --veryLarge: 3rem;
 }
 
 ::selection {
@@ -106,7 +111,7 @@ img {
   font-family: var(--LifeCraft);
   font-size: clamp(2rem, 10vw, 5rem);
   text-transform: uppercase;
-  text-shadow: 0 0 100px rgb(0 0 0 / 75%)
+  text-shadow: 0 0 100px rgb(0 0 0 / 75%);
 }
 
 .hero h2 {
@@ -120,7 +125,7 @@ img {
   max-width: 1300px;
   min-height: 500px;
   margin: 0 auto;
-  padding: 2em;
+  padding: 3em 2em;
 }
 
 @media screen and (max-width: 768px) {
@@ -134,7 +139,7 @@ img {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: min(5vw, 2em);
+  gap: min(5vw, 3em);
   margin: 2em 0;
 }
 
@@ -151,12 +156,10 @@ img {
   transform: scale(115%);
 }
 
-@media screen and (max-width: 768px) {
-  body > .container {
-    min-height: 25vh;
-    display: grid;
-    place-items: center;
-  }
+body > .container {
+  min-height: 25vh;
+  display: grid;
+  place-items: center;
 }
 
 /* About styles */
@@ -178,11 +181,13 @@ img {
 h3 {
   text-align: center;
   margin-bottom: 1em;
-  font-size: 3rem;
+  font-size: var(--veryLarge);
 }
 
 #about p {
   text-align: center;
+  font-size: var(--medium);
+  line-height: 1.5;
 }
 
 /* Setup styles */
@@ -209,7 +214,7 @@ h3 {
 
 h4 {
   text-align: center;
-  font-size: 2rem;
+  font-size: var(--large);
 }
 
 #setup img {
@@ -225,7 +230,7 @@ h4 {
 
 table {
   font-family: monospace;
-  font-size: 1rem;
+  font-size: var(--base);
   border-spacing: 0;
   width: 100%;
   max-width: 600px;
@@ -264,7 +269,9 @@ td:first-of-type {
 }
 
 #contact p {
+  font-size: var(--medium);
   text-align: center;
+  line-height: 1.5;
   margin-bottom: 2em;
 }
 
@@ -285,13 +292,14 @@ form h2 {
 
 label {
   display: block;
-  font-size: 1.25rem;
+  font-size: var(--medium);
   margin-top: 1em;
 }
 
 input,
 textarea {
   font-family: var(--ArialNarrow);
+  font-size: var(--base);
   display: block;
   width: 100%;
   border: none;
@@ -303,7 +311,7 @@ textarea {
 
 button {  
   display: block;
-  font-size: 1rem;
+  font-size: var(--base);
   background: linear-gradient(-45deg, #00ceff, #00ff6f);
   background-size: 500%;
   animation: background-color 10s linear infinite;
@@ -338,12 +346,11 @@ button:active {
 
 footer {
   text-align: center;
-  min-height: auto !important;
 }
 
 footer p {
   font-family: var(--ArialNarrow);
-  font-size: 1.25rem;
+  font-size: var(--medium);
   margin: 0.5em;
 }
 
@@ -355,14 +362,14 @@ footer p a {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 1em;
+  gap: 1.5em;
   margin: 2em;
 }
 
 .icons a img {
   filter: grayscale(1) brightness(100%);
   width: 100%;
-  max-width: 50px;
+  max-width: 64px;
   transition: filter 0.3s;
 }
 
@@ -373,7 +380,7 @@ footer p a {
 .icons > img {
   opacity: 0.5;
   border-radius: 50%;
-  max-width: 50px;
+  max-width: 64px;
   cursor: pointer;
   transition: opacity 0.3s;
 }
@@ -410,9 +417,87 @@ footer p a {
   text-align: center;
 }
 
+/* For large screens */
+@media screen and (min-width: 1981px) {
+  :root {
+    --base: 2rem;
+    --medium: 2.5rem;
+    --large: 3rem;
+    --veryLarge: 4rem;
+  }
+  .hero {
+    min-height: 75vh;
+  }
+  .hero h1 {
+    font-size: 10rem;
+  }
+  .hero h2 {
+    font-size: 5rem;
+  }
+  .nav {
+    gap: 10em;
+  }
+  .nav a {
+    font-size: var(--large);
+  }
+  .container {
+    max-width: 75%;
+    min-height: 1000px;
+    padding: 5em 0;
+  }
+  #setup .container {
+    max-width: 75%;
+  }
+  #setup img {
+    max-width: 800px;
+  }
+  table {
+    max-width: 800px;
+  }
+  td {
+    height: 176px;
+  }
+  form {
+    max-width: 1500px;
+  }
+  form h2 {
+    font-size: var(--large);
+  }
+  button {
+    font-size: var(--medium);
+    border-radius: 100px;
+  }
+  .icons {
+    gap: 3em;
+  }
+  .icons > img {
+    max-width: 128px;
+  }
+  .icons a img {
+    max-width: 128px;
+  }
+}
 
-
-
+@media screen and (min-width: 2561px) {
+  .hero {
+    min-height: min(75vh, 1000px);
+  }
+  body > .container {
+    min-height: auto;
+  }
+  #setup .flex {
+    gap: 5em;
+  }
+  #setup img {
+    max-width: 1000px;
+  }
+  table {
+    max-width: 1000px;
+  }
+  td {
+    height: 150px;
+  }
+}
 
 
 
