@@ -1,27 +1,32 @@
 @font-face {
   font-family: 'ArialNarrow';
   src: url('/fonts/ArialNarrow.ttf');
+  font-display: swap;
 }
 
 @font-face {
   font-family: 'FrizQuadrata';
   src: url('/fonts/FrizQuadrataRegular.ttf');
+  font-display: swap;
 }
 
 @font-face {
   font-family: 'LifeCraft';
   src: url('/fonts/LifeCraftFont.ttf');
+  font-display: swap;
 }
 
 @font-face {
   font-family: 'Morpheus';
   src: url('/fonts/Morpheus.ttf');
+  font-display: swap;
 }
 
 *, *::before, *::after {
   margin:0;
   padding:0;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 :root {
@@ -41,6 +46,11 @@
   --medium: 1.25rem;
   --large: 2rem;
   --veryLarge: 3rem;
+}
+
+::-moz-selection {
+  color: var(--white);
+  background-color: var(--turquoise);
 }
 
 ::selection {
@@ -78,10 +88,19 @@ img {
   background-attachment: fixed;
   height: min(75vh, 750px);
   position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   padding: 2em;
 }
 
@@ -98,6 +117,8 @@ img {
   left: 0;
   right: 0;
   bottom: 0;
+  background: -webkit-gradient(linear, left top, left bottom, from(transparent), to(var(--black)));
+  background: -o-linear-gradient(top, transparent 0%, var(--black) 100%);
   background: linear-gradient(to bottom, transparent 0%, var(--black) 100%);
   z-index: 1;
   pointer-events: none;
@@ -136,9 +157,14 @@ img {
 }
 
 .nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   gap: min(5vw, 3em);
   margin: 2em 0;
 }
@@ -149,15 +175,22 @@ img {
   text-decoration: none;
   text-transform: uppercase;
   font-weight: 700;
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: -webkit-transform 0.3s;
+  -o-transition: transform 0.3s;
   transition: transform 0.3s;
+  transition: transform 0.3s, -webkit-transform 0.3s;
 }
 
 .nav a:hover {
-  transform: scale(115%);
+  -webkit-transform: scale(115%);
+      -ms-transform: scale(115%);
+          transform: scale(115%);
 }
 
 body > .container {
   min-height: 25vh;
+  display: -ms-grid;
   display: grid;
   place-items: center;
 }
@@ -195,10 +228,15 @@ h3 {
   max-width: 1440px;
 }
 #setup .flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   gap: 2em;
-  flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 @media screen and (max-width: 768px) {
@@ -286,6 +324,22 @@ form h2 {
   text-align: center;
 }
 
+::-webkit-input-placeholder {
+  font-family: var(--ArialNarrow);
+}
+
+::-moz-placeholder {
+  font-family: var(--ArialNarrow);
+}
+
+:-ms-input-placeholder {
+  font-family: var(--ArialNarrow);
+}
+
+::-ms-input-placeholder {
+  font-family: var(--ArialNarrow);
+}
+
 ::placeholder {
   font-family: var(--ArialNarrow);
 }
@@ -312,28 +366,43 @@ textarea {
 button {  
   display: block;
   font-size: var(--base);
+  background: -o-linear-gradient(135deg, #00ceff, #00ff6f);
   background: linear-gradient(-45deg, #00ceff, #00ff6f);
   background-size: 500%;
-  animation: background-color 10s linear infinite;
+  -webkit-animation: background-color 10s linear infinite;
+          animation: background-color 10s linear infinite;
   border: none;
   outline: none;
   border-radius: 50px;
   font-weight: 900;
   font-family: var(--FrizQuadrata);
   color: var(--black);
-  box-shadow: rgb(0 0 0 / 35%) 0px 5px 15px;
+  -webkit-box-shadow: rgb(0 0 0 / 35%) 0px 5px 15px;
+          box-shadow: rgb(0 0 0 / 35%) 0px 5px 15px;
   margin: 2em auto 0 auto;
   padding: 1em 3em;
   cursor: pointer;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
   transition: all 0.3s;
 }
 
 button:hover {
-  transform: scale(105%);
+  -webkit-transform: scale(105%);
+      -ms-transform: scale(105%);
+          transform: scale(105%);
 }
 
 button:active {
-  transform: scale(95%);
+  -webkit-transform: scale(95%);
+      -ms-transform: scale(95%);
+          transform: scale(95%);
+}
+
+@-webkit-keyframes background-color {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 @keyframes background-color {
@@ -359,22 +428,33 @@ footer p a {
 }
 
 .icons {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   gap: 1.5em;
   margin: 2em;
 }
 
 .icons a img {
-  filter: grayscale(1) brightness(100%);
+  -webkit-filter: grayscale(1) brightness(100%);
+          filter: grayscale(1) brightness(100%);
   width: 100%;
   max-width: 64px;
+  -webkit-transition: -webkit-filter 0.3s;
+  transition: -webkit-filter 0.3s;
+  -o-transition: filter 0.3s;
   transition: filter 0.3s;
+  transition: filter 0.3s, -webkit-filter 0.3s;
 }
 
 .icons a img:hover {
-  filter: none;
+  -webkit-filter: none;
+          filter: none;
 }
 
 .icons > img {
@@ -382,6 +462,8 @@ footer p a {
   border-radius: 50%;
   max-width: 64px;
   cursor: pointer;
+  -webkit-transition: opacity 0.3s;
+  -o-transition: opacity 0.3s;
   transition: opacity 0.3s;
 }
 
