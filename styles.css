@@ -26,7 +26,8 @@
   margin:0;
   padding:0;
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+          -moz-box-sizing: border-box;
+       box-sizing: border-box;
 }
 
 :root {
@@ -84,22 +85,34 @@ img {
 .hero {
   background-image: url('images/hero.jpg');
   background-position: center;
-  background-size: cover;
+  -webkit-background-size: cover;
+     -moz-background-size: cover;
+       -o-background-size: cover;
+          background-size: cover;
   background-attachment: fixed;
   height: min(75vh, 750px);
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
+  display: -webkit-flex;
+  display: -moz-box;
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
+          -webkit-flex-direction: column;
+             -moz-box-orient: vertical;
+             -moz-box-direction: normal;
           flex-direction: column;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
+          -webkit-justify-content: center;
+             -moz-box-pack: center;
           justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
+          -webkit-align-items: center;
+             -moz-box-align: center;
           align-items: center;
   padding: 2em;
 }
@@ -125,6 +138,8 @@ img {
   bottom: 0;
   background: -webkit-gradient(linear, left top, left bottom, from(transparent), to(var(--black)));
   background: -o-linear-gradient(top, transparent 0%, var(--black) 100%);
+  background: -webkit-linear-gradient(top, transparent 0%, var(--black) 100%);
+  background: -moz-linear-gradient(top, transparent 0%, var(--black) 100%);
   background: linear-gradient(to bottom, transparent 0%, var(--black) 100%);
   z-index: 1;
   pointer-events: none;
@@ -165,11 +180,16 @@ img {
 .nav {
   display: -webkit-box;
   display: -ms-flexbox;
+  display: -webkit-flex;
+  display: -moz-box;
   display: flex;
   -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+      -webkit-flex-wrap: wrap;
+          flex-wrap: wrap;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
+          -webkit-justify-content: center;
+             -moz-box-pack: center;
           justify-content: center;
   gap: min(5vw, 3em);
   margin: 2em 0;
@@ -184,14 +204,19 @@ img {
   -webkit-transition: -webkit-transform 0.3s;
   transition: -webkit-transform 0.3s;
   -o-transition: transform 0.3s;
+  -o-transition: -o-transform 0.3s;
+  -moz-transition: transform 0.3s, -moz-transform 0.3s;
   transition: transform 0.3s;
+  transition: transform 0.3s, -webkit-transform 0.3s, -moz-transform 0.3s, -o-transform 0.3s;
   transition: transform 0.3s, -webkit-transform 0.3s;
 }
 
 .nav a:hover {
   -webkit-transform: scale(115%);
       -ms-transform: scale(115%);
-          transform: scale(115%);
+          -moz-transform: scale(115%);
+            -o-transform: scale(115%);
+       transform: scale(115%);
 }
 
 body > .container {
@@ -205,7 +230,10 @@ body > .container {
 
 #about {
   background-image: url('images/illidan.jpg');
-  background-size: cover;
+  -webkit-background-size: cover;
+     -moz-background-size: cover;
+       -o-background-size: cover;
+          background-size: cover;
   background-position: center;
   background-attachment: fixed;
   background-color: rgba(0,0,0,0.75);
@@ -243,13 +271,18 @@ h3 {
 #setup .flex {
   display: -webkit-box;
   display: -ms-flexbox;
+  display: -webkit-flex;
+  display: -moz-box;
   display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
+          -webkit-justify-content: center;
+             -moz-box-pack: center;
           justify-content: center;
   gap: 2em;
   -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+      -webkit-flex-wrap: wrap;
+          flex-wrap: wrap;
 }
 
 @media screen and (max-width: 768px) {
@@ -307,7 +340,10 @@ td:first-of-type {
 
 #contact {
   background-image: url('images/arthas.jpg');
-  background-size: cover;
+  -webkit-background-size: cover;
+     -moz-background-size: cover;
+       -o-background-size: cover;
+          background-size: cover;
   background-position: center;
   background-attachment: fixed;
   background-color: rgba(0,0,0,0.75);
@@ -360,6 +396,10 @@ form h2 {
   font-family: var(--ArialNarrow);
 }
 
+:-moz-placeholder {
+  font-family: var(--ArialNarrow);
+}
+
 ::placeholder {
   font-family: var(--ArialNarrow);
 }
@@ -378,7 +418,9 @@ textarea {
   width: 100%;
   border: none;
   outline: none;
-  border-radius: 10px;
+  -webkit-border-radius: 10px;
+     -moz-border-radius: 10px;
+          border-radius: 10px;
   padding: 1em;
   margin: 0.5em 0;
 }
@@ -387,39 +429,66 @@ button {
   display: block;
   font-size: var(--base);
   background: -o-linear-gradient(135deg, #00ceff, #00ff6f);
+  background: -webkit-linear-gradient(135deg, #00ceff, #00ff6f);
+  background: -moz-linear-gradient(135deg, #00ceff, #00ff6f);
   background: linear-gradient(-45deg, #00ceff, #00ff6f);
-  background-size: 500%;
+  -webkit-background-size: 500% 500%;
+     -moz-background-size: 500%;
+       -o-background-size: 500%;
+          background-size: 500%;
   -webkit-animation: background-color 10s linear infinite;
-          animation: background-color 10s linear infinite;
+          -moz-animation: background-color 10s linear infinite;
+            -o-animation: background-color 10s linear infinite;
+       animation: background-color 10s linear infinite;
   border: none;
   outline: none;
-  border-radius: 50px;
+  -webkit-border-radius: 50px;
+     -moz-border-radius: 50px;
+          border-radius: 50px;
   font-weight: 900;
   font-family: var(--FrizQuadrata);
   color: var(--black);
   -webkit-box-shadow: rgb(0 0 0 / 35%) 0px 5px 15px;
-          box-shadow: rgb(0 0 0 / 35%) 0px 5px 15px;
+          -moz-box-shadow: rgb(0 0 0 / 35%) 0px 5px 15px;
+       box-shadow: rgb(0 0 0 / 35%) 0px 5px 15px;
   margin: 2em auto 0 auto;
   padding: 1em 3em;
   cursor: pointer;
   -webkit-transition: all 0.3s;
   -o-transition: all 0.3s;
+  -moz-transition: all 0.3s;
   transition: all 0.3s;
 }
 
 button:hover {
   -webkit-transform: scale(105%);
       -ms-transform: scale(105%);
-          transform: scale(105%);
+          -moz-transform: scale(105%);
+            -o-transform: scale(105%);
+       transform: scale(105%);
 }
 
 button:active {
   -webkit-transform: scale(95%);
       -ms-transform: scale(95%);
-          transform: scale(95%);
+          -moz-transform: scale(95%);
+            -o-transform: scale(95%);
+       transform: scale(95%);
 }
 
 @-webkit-keyframes background-color {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@-moz-keyframes background-color {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@-o-keyframes background-color {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
@@ -450,11 +519,16 @@ footer p a {
 .icons {
   display: -webkit-box;
   display: -ms-flexbox;
+  display: -webkit-flex;
+  display: -moz-box;
   display: flex;
   -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+      -webkit-flex-wrap: wrap;
+          flex-wrap: wrap;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
+          -webkit-justify-content: center;
+             -moz-box-pack: center;
           justify-content: center;
   gap: 1.5em;
   margin: 2em;
@@ -468,6 +542,7 @@ footer p a {
   -webkit-transition: -webkit-filter 0.3s;
   transition: -webkit-filter 0.3s;
   -o-transition: filter 0.3s;
+  -moz-transition: filter 0.3s;
   transition: filter 0.3s;
   transition: filter 0.3s, -webkit-filter 0.3s;
 }
@@ -479,11 +554,14 @@ footer p a {
 
 .icons > img {
   opacity: 0.5;
-  border-radius: 50%;
+  -webkit-border-radius: 50%;
+     -moz-border-radius: 50%;
+          border-radius: 50%;
   max-width: 64px;
   cursor: pointer;
   -webkit-transition: opacity 0.3s;
   -o-transition: opacity 0.3s;
+  -moz-transition: opacity 0.3s;
   transition: opacity 0.3s;
 }
 
@@ -506,7 +584,8 @@ footer p a {
 /* Handle */
 ::-webkit-scrollbar-thumb {
   background: #888;
-  border-radius: 10px;
+  -webkit-border-radius: 10px;
+          border-radius: 10px;
 }
 
 /* Handle on hover */
@@ -567,7 +646,9 @@ footer p a {
   }
   button {
     font-size: var(--medium);
-    border-radius: 100px;
+    -webkit-border-radius: 100px;
+       -moz-border-radius: 100px;
+            border-radius: 100px;
   }
   .icons {
     gap: 3em;
@@ -599,25 +680,4 @@ footer p a {
   td {
     height: 150px;
   }
-}
-
-
-
-
-
-
-
-
-
-/* ----- Coming Soon ----- */
-
-.home {
-  overflow: hidden;
-}
-
-iframe {
-  width: 100vw;
-  height: 100vh;
-  border: none;
-  outline: none;
 }
