@@ -104,6 +104,12 @@ img {
   padding: 2em;
 }
 
+@media screen and (max-width: 768px) {
+  .hero {
+    background-attachment: initial;
+  }
+}
+
 @supports (background-image: url('images/hero.webp')) {
   .hero {
     background-image: url('images/hero.webp');
@@ -200,9 +206,16 @@ body > .container {
 #about {
   background-image: url('images/illidan.jpg');
   background-size: cover;
+  background-position: center;
   background-attachment: fixed;
   background-color: rgba(0,0,0,0.75);
   background-blend-mode: multiply;
+}
+
+@media screen and (max-width: 768px) {
+  #about {
+    background-attachment: initial;
+  }
 }
 
 @supports (background-image: url('images/illidan.webp')) {
@@ -295,9 +308,16 @@ td:first-of-type {
 #contact {
   background-image: url('images/arthas.jpg');
   background-size: cover;
+  background-position: center;
   background-attachment: fixed;
   background-color: rgba(0,0,0,0.75);
   background-blend-mode: multiply;
+}
+
+@media screen and (max-width: 768px) {
+  #contact {
+    background-attachment: initial;
+  }
 }
 
 @supports (background-image: url('images/arthas.webp')) {
