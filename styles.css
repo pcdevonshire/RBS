@@ -362,6 +362,17 @@ td:first-of-type {
   }
 }
 
+#hat-link {
+  color: var(--white);
+}
+
+span {
+  font-size: var(--base);
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
 #contact p {
   font-size: var(--medium);
   text-align: center;
