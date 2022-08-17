@@ -436,10 +436,6 @@ textarea {
   margin: 0.5em 0;
 }
 
-.g-recaptcha > div {
-  margin: 2em auto 0 auto;
-}
-
 button {  
   display: block;
   font-size: var(--base);
