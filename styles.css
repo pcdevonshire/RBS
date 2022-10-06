@@ -264,6 +264,10 @@ h3 {
   line-height: 1.5;
 }
 
+#about a {
+  color: var(--white);
+}
+
 /* Setup styles */
 #setup .container {
   max-width: 1440px;
