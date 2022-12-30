@@ -83,7 +83,7 @@ img {
 /* Hero styles */
 
 .hero {
-  background-image: url('images/hero.jpg');
+  background-image: url('https://media2.giphy.com/media/gioCX6AYopXuFC5Fdf/giphy.gif?cid=790b7611657b8d27429a15e42eaeeb1c8cf8c5eac28d69b7&rid=giphy.gif&ct=g');
   background-position: center;
   -webkit-background-size: cover;
      -moz-background-size: cover;
@@ -123,12 +123,6 @@ img {
   }
 }
 
-@supports (background-image: url('images/hero.webp')) {
-  .hero {
-    background-image: url('images/hero.webp');
-  }
-}
-
 .hero::after {
   content: '';
   position: absolute;
@@ -136,11 +130,11 @@ img {
   left: 0;
   right: 0;
   bottom: 0;
-  background: -webkit-gradient(linear, left top, left bottom, from(transparent), to(var(--black)));
-  background: -o-linear-gradient(top, transparent 0%, var(--black) 100%);
-  background: -webkit-linear-gradient(top, transparent 0%, var(--black) 100%);
-  background: -moz-linear-gradient(top, transparent 0%, var(--black) 100%);
-  background: linear-gradient(to bottom, transparent 0%, var(--black) 100%);
+  background: -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(50%, transparent), to(var(--black)));
+  background: -webkit-linear-gradient(top, transparent 0%, transparent 50%, var(--black) 100%);
+  background: -moz-linear-gradient(top, transparent 0%, transparent 50%, var(--black) 100%);
+  background: -o-linear-gradient(top, transparent 0%, transparent 50%, var(--black) 100%);
+  background: linear-gradient(to bottom, transparent 0%, transparent 50%, var(--black) 100%);
   z-index: 1;
   pointer-events: none;
 }
@@ -151,14 +145,14 @@ img {
 
 .hero h1 {
   font-family: var(--LifeCraft);
-  font-size: clamp(2rem, 10vw, 5rem);
+  font-size: clamp(2rem, 10vw, 6rem);
   text-transform: uppercase;
   text-shadow: 0 0 100px rgb(0 0 0 / 75%);
 }
 
 .hero h2 {
   font-family: var(--Morpheus);
-  font-size: clamp(1.5rem, 8vw, 2.5rem);
+  font-size: clamp(1.5rem, 8vw, 3rem);
   text-align: center;
   text-transform: lowercase;
 }
@@ -236,7 +230,7 @@ body > .container {
           background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  background-color: rgba(0,0,0,0.75);
+  background-color: rgba(0,0,0,0.5);
   background-blend-mode: multiply;
 }
 
@@ -266,6 +260,32 @@ h3 {
 
 #about a {
   color: var(--white);
+}
+
+/* Twitch Embed */
+#twitch-embed {
+  text-align: center;
+  padding: 5em;
+}
+iframe {
+  width: 50%;
+  aspect-ratio: 16 / 9;
+  border-radius: 1ch;
+}
+
+@media screen and (max-width: 1439px) {
+  iframe {
+    width: 75%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #twitch-embed {
+    padding: 1em;
+  }
+  iframe {
+    width: 100%;
+  }
 }
 
 /* Setup styles */
@@ -350,7 +370,7 @@ td:first-of-type {
           background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  background-color: rgba(0,0,0,0.75);
+  background-color: rgba(0,0,0,0.5);
   background-blend-mode: multiply;
 }
 
